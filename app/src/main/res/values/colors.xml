@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6200EE</color>
-    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorPrimary">#12787C</color>
+    <color name="colorPrimaryDark">#040404</color>
     <color name="colorAccent">#03DAC5</color>
-    <color name="colorWhite95">#95FFFFFF</color>
-    <color name="black60">#60000000</color>
+    <color name="colorStroke">#0F6467</color>
+    <color name="colorNumberButton">#63000000</color>
+    <color name="colorButtonTap">#60FFFFFF</color>
+    <color name="colorText">#FBFBFB</color>
+    <color name="colorTextOperation">#000000</color>
+    <color name="colorBackground">#E1E1E1</color>
 </resources>

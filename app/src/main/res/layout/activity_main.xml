@@ -8,7 +8,7 @@
         android:id="@+id/container1"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="@color/colorBackground"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -37,16 +37,35 @@
                         android:padding="10dp">
 
                         <TextView
-                            android:id="@+id/textView"
+                            android:id="@+id/mathOperation"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="@string/choose_level"
-                            android:textColor="@color/white"
+                            android:textColor="@color/colorTextOperation"
                             android:textColorHint="#1BFFFFFF"
-                            android:textSize="30sp"
+                            android:textSize="50sp"
+                            android:textStyle="bold|italic" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/title2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        android:padding="5dp">
+
+                        <TextView
+                            android:id="@+id/mathResult"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:textColor="@color/colorTextOperation"
+                            android:textColorHint="#1BFFFFFF"
+                            android:textSize="50sp"
                             android:textStyle="bold|italic" />
                     </LinearLayout>
 
@@ -57,67 +76,50 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView1"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/signAC"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_sign"
                             android:gravity="center"
-                            android:onClick="level1"
-                            android:text="1"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:text="AC"
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView2"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/signLeft"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_sign"
                             android:gravity="center"
-                            android:onClick="level2"
-                            android:text="2"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:text="("
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView3"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/signRight"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_sign"
                             android:gravity="center"
-                            android:onClick="level3"
-                            android:text="3"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:text=")"
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView4"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/signDivision"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_sign"
                             android:gravity="center"
-                            android:onClick="level4"
-                            android:text="4"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView5"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
-                            android:gravity="center"
-                            android:onClick="level5"
-                            android:text="5"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:text="/"
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -130,67 +132,221 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/textView6"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/number7"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
-                            android:gravity="center"
-                            android:onClick="level6"
-                            android:text="6"
-                            android:textColor="@color/colorPrimaryDark"
-                            android:textSize="24sp"
-                            android:textStyle="bold" />
-
-                        <TextView
-                            android:id="@+id/textView7"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_number"
                             android:gravity="center"
                             android:onClick="level7"
                             android:text="7"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView8"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/number8"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_number"
                             android:gravity="center"
                             android:onClick="level8"
                             android:text="8"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView9"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/number9"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_number"
                             android:gravity="center"
                             android:onClick="level9"
                             android:text="9"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
 
                         <TextView
-                            android:id="@+id/textView10"
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
+                            android:id="@+id/signMultip"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
                             android:layout_marginRight="10dp"
-                            android:background="@drawable/btn_gamelevels"
+                            android:background="@drawable/btn_sign"
                             android:gravity="center"
-                            android:onClick="level10"
-                            android:text="10"
-                            android:textColor="@color/colorPrimaryDark"
+                            android:text="*"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/number4"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="4"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/number5"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="5"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/number6"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="6"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/signMinus"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_sign"
+                            android:gravity="center"
+                            android:text="-"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/number1"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/number2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/number3"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/signPlus"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_sign"
+                            android:gravity="center"
+                            android:text="+"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/line5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/signPoint"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="."
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/number0"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_number"
+                            android:gravity="center"
+                            android:text="0"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/btnBack"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_sign"
+                            android:gravity="center"
+                            android:text="Back"
+                            android:textColor="@color/colorText"
+                            android:textSize="24sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/signEqual"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/btn_sign"
+                            android:gravity="center"
+                            android:text="="
+                            android:textColor="@color/colorText"
                             android:textSize="24sp"
                             android:textStyle="bold" />
                     </LinearLayout>
@@ -198,6 +354,17 @@
                 </LinearLayout>
             </ScrollView>
 
+
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btn_change_theme"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/btn_number"
+            android:text="Change theme"
+            android:textColor="@color/colorText" />
     </LinearLayout>
 </RelativeLayout>
