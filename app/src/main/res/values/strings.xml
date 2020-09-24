@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="buy_with_googlepay_button_content_description">Buy with Google Pay</string>
+    <string name="buy_something">   Buy something   </string>
+    <string name="cake">Really tasty</string>
+    <string name="price_cake">$1.00</string>
+    <string name="googlepay_button_content_description">Google Pay</string>
+    <string name="payments_show_name">
+        Successfully! \n
+        \n
+        TransactionCode: %s
+    </string>
+    <string name="alert_dialog_positive_button">ОК</string>
 </resources>
