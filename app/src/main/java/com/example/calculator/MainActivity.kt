@@ -1,22 +1,32 @@
 package com.example.calculator
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.app.AppCompatDelegate.setDefaultNightMode
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
 import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
+    private val KEY_THEME = "Theme"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val themeSharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
 
         btn_change_theme.setOnClickListener{
             if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
-            } else AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+                themeSharedPreferences.edit().putInt(KEY_THEME, AppCompatDelegate.MODE_NIGHT_NO).apply()
+            } else {
+                setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+                themeSharedPreferences.edit().putInt(KEY_THEME, AppCompatDelegate.MODE_NIGHT_YES).apply()            }
         }
 
         setOperation()
@@ -75,5 +85,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+    }
+
+    override fun onCreateView(name: String, context: Context, attrs: AttributeSet): View? {
+        val themeSharedPreferences = this.getPreferences(Context.MODE_PRIVATE)
+        setDefaultNightMode(themeSharedPreferences.getInt(KEY_THEME,1))
+        return super.onCreateView(name, context, attrs)
     }
 }
