@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="field1">Field 1</string>
+    <string name="field2">Field 2</string>
+    <string name="field3">Field 3</string>
+    <string name="plus">+</string>
+    <string name="equal">=</string>
+    <string name="error_title">Ошибка</string>
+    <string name="alert_dialog_positive_button">Ок</string>
 </resources>
