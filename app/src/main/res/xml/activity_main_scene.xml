@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ConstraintSet android:id="@+id/start">
+        <Constraint
+            android:id="@id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toToBottomOf="parent"
+            app:layout_constraintLeft_toToLeftOf="parent"
+            app:layout_constraintTop_toToTopOf="parent"/>
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/end">
+        <Constraint
+            android:id="@id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toToBottomOf="parent"
+            app:layout_constraintRight_toToRightOf="parent"
+            app:layout_constraintTop_toToTopOf="parent"/>
+    </ConstraintSet>
+
+    <Transition
+        app:constraintSetEnd="@id/end"
+        app:constraintSetStart="@+id/start" >
+        <OnSwipe
+            app:touchAnchorId="@id/textView"
+            app:touchAnchorSide="left"
+            app:dragDirection="dragRight"/>
+
+        <KeyFrameSet>
+            <KeyPosition
+                app:keyPositionType="parentRelative"
+                app:percentY="0.25"
+                app:framePosition="50"
+                app:motionTarget="@id/textView">
+            </KeyPosition>
+        </KeyFrameSet>
+    </Transition>
+
+</MotionScene>
