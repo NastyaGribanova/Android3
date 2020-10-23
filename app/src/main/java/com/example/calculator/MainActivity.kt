@@ -57,13 +57,13 @@ class MainActivity : AppCompatActivity() {
                 ObjectAnimator.ofFloat(btn_hello, "translationY", -200f).setDuration(1000).apply {
                     start()
                 },
-                ObjectAnimator.ofFloat(btn_hello, View.ROTATION, 0f, 360f).setDuration(1000).apply {
+                ObjectAnimator.ofFloat(btn_hello, View.ROTATION,  360f).setDuration(1000).apply {
                     start()
                 },
                 ObjectAnimator.ofFloat(btn_hello2, "translationY", 600f).setDuration(1000).apply {
                     start()
                 },
-                ObjectAnimator.ofFloat(btn_hello2, View.ROTATION, 360f, 0f).setDuration(1000).apply {
+                ObjectAnimator.ofFloat(btn_hello2, View.ROTATION,  0f).setDuration(1000).apply {
                     start()
                 }
             )
@@ -81,13 +81,13 @@ class MainActivity : AppCompatActivity() {
                 ObjectAnimator.ofFloat(btn_hello, "translationY", 0f).setDuration(1000).apply {
                     start()
                 },
-                ObjectAnimator.ofFloat(btn_hello, View.ROTATION, 360f, 0f).setDuration(1000).apply {
+                ObjectAnimator.ofFloat(btn_hello, View.ROTATION,  0f).setDuration(1000).apply {
                     start()
                 },
                 ObjectAnimator.ofFloat(btn_hello2, "translationY", 0f).setDuration(1000).apply {
                     start()
                 },
-                ObjectAnimator.ofFloat(btn_hello2, View.ROTATION, 0f, 360f).setDuration(1000).apply {
+                ObjectAnimator.ofFloat(btn_hello2, View.ROTATION,  360f).setDuration(1000).apply {
                     start()
                 })
             TransitionManager.go(scene2, AutoTransition())
