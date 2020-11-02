@@ -7,6 +7,7 @@ import com.jakewharton.rxrelay2.Relay
 import io.reactivex.Observable
 import io.reactivex.Single
 import io.reactivex.rxkotlin.ofType
+import io.reactivex.schedulers.Schedulers.computation
 import java.lang.NumberFormatException
 
 class WriteNumberSideEffect (
@@ -22,47 +23,41 @@ class WriteNumberSideEffect (
         state: StateAccessor<CalculatorState>
     ): Observable<out CalculatorAction> {
         return actions.ofType<WriteValues>()
-            .switchMap { action ->
-                getResult(action.newValue)
-                    .map<CalculatorAction> {
-                        ComputationSuccess(
-                            Triple(
-                                it.first.toString(),
-                                it.second.toString(),
-                                it.third.toString()
-                            )
-                        )
-                    }
-                    .doOnError { throwable ->
-                        when (throwable) {
-                            NotSuchCharactersException -> newsRelay.accept(
-                                ShowComputationError(
-                                    throwable.message.toString()
+            .switchMap {
+                if (state.invoke().error == null && state.invoke().lastChangedFields != null
+                    && state.invoke().preLastChangedFields != null
+                ) {
+                    computation(
+                        state.invoke().lastChangedFields!!,
+                        state.invoke().preLastChangedFields!!
+                    )
+                        .map<CalculatorAction> {
+                            ComputationSuccess(
+                                Triple(
+                                    it.first.toString(),
+                                    it.second.toString(),
+                                    it.third.toString()
                                 )
                             )
                         }
-                    }
-                    .onErrorReturnItem(ErrorComputation)
-                    .toObservable()
-                    .startWith(StartComputation)
+                        .doOnError { throwable ->
+                            when (throwable) {
+                                NotSuchCharactersException -> newsRelay.accept(
+                                    ShowComputationError(
+                                        throwable.message.toString()
+                                    )
+                                )
+                            }
+                        }
+                        .onErrorReturnItem(ErrorComputation)
+                        .toObservable()
+                        .startWith(StartComputation)
+                } else {
+                    Single.just(ErrorComputation)
+                        .toObservable()
+                }
             }
     }
-
-    private fun getResult(newValue: Pair<String, String>): Single<Triple<Int, Int, Int>> {
-        return if (lastValue != null && lastValue?.first != newValue.first) {
-            val mLastValue = lastValue
-            preLastValue = lastValue
-            lastValue = newValue
-            computation(newValue, mLastValue!!)
-        } else if (preLastValue != null && lastValue?.first == newValue.first && preLastValue?.first != newValue.first) {
-            lastValue = newValue
-            computation(newValue, preLastValue!!)
-        } else {
-            lastValue = newValue
-            Single.error(InsufficientDataException)
-        }
-    }
-
 
     private fun computation(
         lastValue: Pair<String, String>,
